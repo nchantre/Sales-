@@ -4,13 +4,29 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Pagina Principal"
              x:Class="Sales.MainPage">
 
-    <StackLayout>
+    <StackLayout Orientation="Vertical">
         <!-- Place new controls here -->
-        <Label Text="Hola desde la arquitectura !" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label x:Name="labelTexto"
+               Text="Hola desde la arquitectura !" 
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+        <Entry x:Name="entryTexto"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               WidthRequest="200"/>
+        <Button x:Name="buttonTexto"
+               Text="Pica Aqui"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"/>
+
+        <Button x:Name="btnSiguiente"
+               Text="direccionar otra pagina"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"/>
+
     </StackLayout>
 
 </ContentPage>
