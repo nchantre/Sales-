@@ -4,12 +4,56 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+            
+             Title="Login"
              x:Class="Sales.Views.LoginPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Inicio de Login!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="TecniCafe">
+                
+            </Label>
+            <Image
+                Source="cafe">
+                
+            </Image>
+            <Label 
+                Text="Email">
+            </Label>
+            <Entry
+                Keyboard="Email"               
+                Placeholder="Enter Your Mail">
+                
+            </Entry>
+            <Label 
+                Text="Password">
+            </Label>
+            <Entry
+                IsPassword="True"               
+                Placeholder="Password">
+            </Entry>
+            <ActivityIndicator>
+                
+            </ActivityIndicator>
+            <Button x:Name="btnlogin"
+                BorderRadius="23"
+                BackgroundColor="Coral"
+                TextColor="White"
+                Text="Login">
+                
+            </Button>
+
+            <Label
+                HorizontalOptions="Fill"
+                Text="Recordar Contraseña">
+                
+            </Label>
+            <Switch>
+                
+            </Switch>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

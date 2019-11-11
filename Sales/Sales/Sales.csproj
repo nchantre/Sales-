@@ -17,10 +17,12 @@
     <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>
