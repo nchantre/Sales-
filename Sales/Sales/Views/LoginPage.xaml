@@ -4,10 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
             
-             Title="Login"
+        Title="Login"
              x:Class="Sales.Views.LoginPage">
     <ContentPage.Content>
+        <ScrollView 
+            
+            BindingContext="{Binding Login}">
+      
         <StackLayout Padding="20">
             <Label
                 FontAttributes="Bold"
@@ -24,21 +29,26 @@
                 Text="Email">
             </Label>
             <Entry
+                Text="{ Binding txtEmail, Mode=TwoWay}"
                 Keyboard="Email"               
                 Placeholder="Enter Your Mail">
+                
                 
             </Entry>
             <Label 
                 Text="Password">
             </Label>
             <Entry
+                Text="{ Binding txtPassword, Mode=TwoWay}"
                 IsPassword="True"               
                 Placeholder="Password">
             </Entry>
-            <ActivityIndicator>
+            <ActivityIndicator
+                IsRunning="{ Binding IsRunning, Mode=TwoWay}">
                 
             </ActivityIndicator>
             <Button x:Name="btnlogin"
+                    Command="{Binding btnlogin }"
                 BorderRadius="23"
                 BackgroundColor="Coral"
                 TextColor="White"
@@ -51,9 +61,12 @@
                 Text="Recordar Contraseña">
                 
             </Label>
-            <Switch>
+            <Switch
+                IsToggled="{Binding ddlrecordar, Mode=TwoWay}">
                 
             </Switch>
         </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
