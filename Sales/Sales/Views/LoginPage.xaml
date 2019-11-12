@@ -29,7 +29,7 @@
                 Text="Email">
             </Label>
             <Entry
-                Text="{ Binding txtEmail, Mode=TwoWay}"
+                Text="{ Binding TxtEmail, Mode=TwoWay}"
                 Keyboard="Email"               
                 Placeholder="Enter Your Mail">
                 
@@ -39,7 +39,7 @@
                 Text="Password">
             </Label>
             <Entry
-                Text="{ Binding txtPassword, Mode=TwoWay}"
+                Text="{ Binding TxtPassword, Mode=TwoWay}"
                 IsPassword="True"               
                 Placeholder="Password">
             </Entry>
@@ -51,6 +51,7 @@
                 Command="{Binding btnlogin }"
                 BorderRadius="23"
                 BackgroundColor="Coral"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 TextColor="White"
                 Text="Login">
                 
@@ -62,7 +63,7 @@
                 
             </Label>
             <Switch
-                IsToggled="{Binding ddlrecordar, Mode=TwoWay}">
+                IsToggled="{Binding Ddlrecordar, Mode=TwoWay}">
                 
             </Switch>
         </StackLayout>

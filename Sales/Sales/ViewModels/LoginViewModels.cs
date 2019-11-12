@@ -7,13 +7,40 @@ using Xamarin.Forms;
 
 namespace Sales.ViewModels
 {
-    public class LoginViewModels
+    public class LoginViewModels : BaseViewModel
     {
+        #region Attributes
+        private string txtPassword;
+        private string txtEmail;
+        private bool isRunning;
+        private bool isEnabled;
+        #endregion
+
         #region Propiedades
-        public string txtEmail { get; set; }
-        public string txtPassword { get; set; }
-        public bool IsRunning { get; set; }
-        public bool ddlrecordar { get; set; }
+        public string TxtEmail
+        {
+            get { return txtEmail; }
+            set { SetValue(ref this.txtEmail, value); }
+            
+        }
+        public string TxtPassword 
+        {
+            get { return txtPassword; }
+            set { SetValue(ref this.txtPassword, value); }
+        }
+        public bool IsRunning 
+        {
+            get { return this.isRunning; }
+            set { SetValue(ref this.isRunning, value); }
+           
+        }
+
+        public bool IsEnabled
+        {
+            get { return this.isEnabled; }
+            set { SetValue(ref this.isEnabled, value); }
+        }
+        public bool Ddlrecordar { get; set; }
 
         #endregion
         #region Commandos
@@ -28,7 +55,7 @@ namespace Sales.ViewModels
 
         private async void login()
         {
-            if (string.IsNullOrEmpty(this.txtEmail))
+            if (string.IsNullOrEmpty(this.TxtEmail))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
@@ -37,13 +64,25 @@ namespace Sales.ViewModels
                 return;
 
             }
-
-            if (string.IsNullOrEmpty(this.txtPassword))
+            //################################################
+            if (string.IsNullOrEmpty(this.TxtPassword))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
                     "You must enter an Password",
                     "Accept");
+                return;
+
+
+            }
+            //##########################################################
+            if (this.TxtEmail !="uno@gmail.com" || this.TxtPassword != "1234")
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Email or Password incorrec.",
+                    "Accept");
+                  this.TxtPassword = string.Empty;
                 return;
 
 
@@ -56,7 +95,10 @@ namespace Sales.ViewModels
         #region Contructores
         public LoginViewModels()
         {
-            this.ddlrecordar = true;
+            
+            this.IsEnabled = true;
+
+            this.Ddlrecordar = true;
 
         }
 
