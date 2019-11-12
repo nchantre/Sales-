@@ -1,6 +1,8 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Sales.ViewModels
@@ -15,7 +17,41 @@ namespace Sales.ViewModels
 
         #endregion
         #region Commandos
-        public Command btnlogin { get; set; }
+        public ICommand btnlogin
+        {
+            get
+            {
+                return new RelayCommand(login);
+            }
+             
+        }
+
+        private async void login()
+        {
+            if (string.IsNullOrEmpty(this.txtEmail))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "You must enter an email",
+                    "Accept");
+                return;
+
+            }
+
+            if (string.IsNullOrEmpty(this.txtPassword))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "You must enter an Password",
+                    "Accept");
+                return;
+
+
+            }
+
+
+
+        }
         #endregion
         #region Contructores
         public LoginViewModels()

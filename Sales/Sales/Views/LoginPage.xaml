@@ -47,8 +47,8 @@
                 IsRunning="{ Binding IsRunning, Mode=TwoWay}">
                 
             </ActivityIndicator>
-            <Button x:Name="btnlogin"
-                    Command="{Binding btnlogin }"
+            <Button 
+                Command="{Binding btnlogin }"
                 BorderRadius="23"
                 BackgroundColor="Coral"
                 TextColor="White"

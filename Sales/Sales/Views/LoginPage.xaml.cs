@@ -20,7 +20,7 @@ namespace Sales.Views
 
         private void Inicializar()
         {
-            btnlogin.Clicked += btnlogin_Clicked;
+            //btnlogin.Clicked += btnlogin_Clicked;
         }
 
         private void btnlogin_Clicked(object sender, EventArgs e)
