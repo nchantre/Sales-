@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Sales
+namespace Sales.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OtraPagina : ContentPage
+    public partial class LandsPage : ContentPage
     {
-        public OtraPagina()
+        public LandsPage()
         {
             InitializeComponent();
         }

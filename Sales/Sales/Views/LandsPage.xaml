@@ -4,11 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             Title="Pagina Dos"
-             x:Class="Sales.OtraPagina">
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Paises"
+             x:Class="Sales.Views.LandsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Estoy En la Pagina Dos!"
+        <StackLayout 
+            BindingContext="{Binding Lands}"
+            Padding="5">
+            <Label Text="Landas Pange"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

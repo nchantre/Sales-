@@ -28,7 +28,7 @@ namespace Sales
 
         private void BtnSiguiente_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new OtraPagina());
+          //  Navigation.PushAsync(new OtraPagina());
         }
 
         private void ButtonTexto_Clicked(object sender, EventArgs e)

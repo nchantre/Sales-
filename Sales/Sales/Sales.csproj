@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,13 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.9.1" />
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="OtraPagina.xaml">
+    <EmbeddedResource Update="Views\LandsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">
@@ -21,9 +24,5 @@
     <EmbeddedResource Update="Views\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 </Project>

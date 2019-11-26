@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Sales.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -76,17 +77,26 @@ namespace Sales.ViewModels
 
             }
             //##########################################################
-            if (this.TxtEmail !="uno@gmail.com" || this.TxtPassword != "1234")
+            if (this.TxtEmail !="uno" || this.TxtPassword != "1234")
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
                     "Email or Password incorrec.",
                     "Accept");
                   this.TxtPassword = string.Empty;
+                  this.TxtEmail= string.Empty;
                 return;
 
 
             }
+
+            MainViewModels.GetInstance().Lands = new LandsViewModels();
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            this.TxtPassword = string.Empty;
+            this.TxtEmail = string.Empty;
+
+
+
 
 
 

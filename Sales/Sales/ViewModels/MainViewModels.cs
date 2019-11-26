@@ -12,16 +12,32 @@ namespace Sales.ViewModels
             get;
             set;
         }
+        public LandsViewModels Lands
+        {
+            get;
+            set;
+        }
         #endregion
         #region Contructors
         public MainViewModels()
         {
+            instance = this;
             this.Login = new LoginViewModels();
 
         }
+        #endregion
+        #region Singleton
+        private static MainViewModels instance;
 
+        public static MainViewModels GetInstance()
+        {
+            if (instance == null)
+            {
+                return new MainViewModels();
+            }
 
-
+            return instance;
+        }
         #endregion
     }
 }
