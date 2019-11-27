@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sales.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,16 @@ namespace Sales.ViewModels
 {
     public class MainViewModels
     {
+        #region Properties
+        public List<Land> LandsList 
+        {
+            get;
+            set;
+        
+        }
+
+        #endregion
+
         #region ViewModel
         public LoginViewModels Login
         {
@@ -17,7 +28,14 @@ namespace Sales.ViewModels
             get;
             set;
         }
+
+        public LandViewModels Land
+        {
+            get;
+            set;
+        }
         #endregion
+
         #region Contructors
         public MainViewModels()
         {
@@ -26,6 +44,7 @@ namespace Sales.ViewModels
 
         }
         #endregion
+
         #region Singleton
         private static MainViewModels instance;
 
