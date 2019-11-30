@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace Sales
 {
@@ -13,8 +14,11 @@ namespace Sales
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+
+        private global::Xamarin.Forms.Maps.Map formMap;
         public MainPage()
         {
+         
             InitializeComponent();
             Inicializar();
         }
@@ -24,6 +28,7 @@ namespace Sales
             buttonTexto.Clicked += ButtonTexto_Clicked;
             btnSiguiente.Clicked += BtnSiguiente_Clicked;
             //throw new NotImplementedException();
+        
         }
 
         private void BtnSiguiente_Clicked(object sender, EventArgs e)

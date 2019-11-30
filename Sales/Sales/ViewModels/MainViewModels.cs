@@ -14,6 +14,13 @@ namespace Sales.ViewModels
             set;
         
         }
+        public TokenResponse Token
+        {
+            get;
+            set;
+
+        }
+
 
         #endregion
 
@@ -34,6 +41,13 @@ namespace Sales.ViewModels
             get;
             set;
         }
+
+        public UbicationViewModels Ubication
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region Contructors

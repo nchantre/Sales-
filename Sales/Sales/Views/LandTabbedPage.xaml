@@ -6,15 +6,19 @@
     xmlns:tabs="clr-namespace:Sales.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+
     BackgroundColor="White"
     x:Class="Sales.Views.LandTabbedPage"
     Title="Land">
     <TabbedPage.Children>
+        <tabs:RegistroFincasPage/>
         <tabs:LandPage/>
         <tabs:BordersPage/>
         <tabs:CurrenciesPage/>
         <tabs:TranslationsPage/>
         <tabs:LanguagesPage/>
+        <tabs:UbicationPage/>
+
     </TabbedPage.Children>
     
 </TabbedPage>

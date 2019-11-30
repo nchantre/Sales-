@@ -5,11 +5,17 @@ using System.Text;
 using Sales.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Sales.Services;
 
 namespace Sales.ViewModels
 {
     public class LoginViewModels : BaseViewModel
     {
+        #region Services
+        private ApiService apiService;
+
+        #endregion
+
         #region Attributes
         private string txtPassword;
         private string txtEmail;
@@ -77,21 +83,59 @@ namespace Sales.ViewModels
 
             }
             //##########################################################
-            if (this.TxtEmail !="uno" || this.TxtPassword != "1234")
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Email or Password incorrec.",
-                    "Accept");
-                  this.TxtPassword = string.Empty;
-                  this.TxtEmail= string.Empty;
-                return;
+             if (this.TxtEmail !="uno" || this.TxtPassword != "1234")
+             {
+                 await Application.Current.MainPage.DisplayAlert(
+                     "Error",
+                     "Email or Password incorrec.",
+                     "Accept");
+                   this.TxtPassword = string.Empty;
+                   this.TxtEmail= string.Empty;
+                 return;
 
 
-            }
+             }
 
-            MainViewModels.GetInstance().Lands = new LandsViewModels();
-            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            /* var connection = await this.apiService.CheckConnection();
+             if (!connection.IsSuccess)
+             {
+                 await Application.Current.MainPage.DisplayAlert(
+                      "Error",
+                      connection.Message,
+                      "Accept");             
+                 return;
+             }
+             var token = await this.apiService.GetToken(
+                 "https://landsapi1.azurewebsites.net/",
+                 this.TxtEmail,
+                 this.TxtPassword);
+             if (token == null)
+             {
+                 await Application.Current.MainPage.DisplayAlert(
+                      "Error",
+                      "Something was wrong",
+                      "Accept");
+                 return;
+
+
+             }
+             if (string.IsNullOrEmpty(token.AccessToken))
+             {
+                 await Application.Current.MainPage.DisplayAlert(
+                      "Error",
+                      token.ErrorDescription,
+                      "Accept");
+                 return;
+
+
+             }*/
+
+            var mainViewModel = MainViewModels.GetInstance();
+
+            //mainViewModel.Token = token;
+            // MainViewModels.GetInstance().Lands = new LandsViewModels();
+            mainViewModel.Lands = new LandsViewModels();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegistroFincasPage());
             this.TxtPassword = string.Empty;
             this.TxtEmail = string.Empty;
 
@@ -105,10 +149,10 @@ namespace Sales.ViewModels
         #region Contructores
         public LoginViewModels()
         {
-            
+            this.apiService = new ApiService();
             this.IsEnabled = true;
-
             this.Ddlrecordar = true;
+           
 
         }
 

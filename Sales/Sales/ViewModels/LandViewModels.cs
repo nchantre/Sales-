@@ -12,6 +12,8 @@ namespace Sales.ViewModels
         #region Attributes
 
         private ObservableCollection<Border> borders;
+        private ObservableCollection<Currency> currencies;
+        private ObservableCollection<Language> language;
         #endregion
 
         #region Property
@@ -28,6 +30,19 @@ namespace Sales.ViewModels
 
         }
 
+        public ObservableCollection<Currency> Currencies
+        {
+            get { return currencies; }
+            set { this.SetValue(ref this.currencies, value); }
+
+        }
+
+        public ObservableCollection<Language> Language
+        {
+            get { return language; }
+            set { this.SetValue(ref this.language, value); }
+
+        }
         #endregion
 
         #region Constructores
@@ -35,6 +50,8 @@ namespace Sales.ViewModels
         {
             this.Land = land;
             this.LoadBorders();
+            this.Currencies = new ObservableCollection<Currency>(this.Land.Currencies);
+            this.Language = new ObservableCollection<Language>(this.Land.Languages);
         }
 
         #endregion

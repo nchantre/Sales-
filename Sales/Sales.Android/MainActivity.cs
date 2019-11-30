@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin;
+using Plugin.Permissions;
 
 namespace Sales.Droid
 {
@@ -21,7 +23,18 @@ namespace Sales.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+
+
+
+            //base.OnCreate(savedInstanceState);
+            //global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            //FormsMaps.Init(this, savedInstanceState);
+            //Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            //LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -29,5 +42,7 @@ namespace Sales.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+      
     }
 }

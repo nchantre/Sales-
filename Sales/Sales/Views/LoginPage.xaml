@@ -13,60 +13,60 @@
             
             BindingContext="{Binding Login}">
       
-        <StackLayout Padding="20">
-            <Label
-                FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalOptions="Center"
-                Text="TecniCafe">
+            <StackLayout Padding="20">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="TecniCafe">
                 
-            </Label>
-            <Image
-                Source="cafe">
+                </Label>
+                <Image
+                    Source="cafe">
                 
-            </Image>
-            <Label 
-                Text="Email">
-            </Label>
-            <Entry
-                Text="{ Binding TxtEmail, Mode=TwoWay}"
-                Keyboard="Email"               
-                Placeholder="Enter Your Mail">
+                </Image>
+                <Label 
+                    Text="Email">
+                </Label>
+                <Entry
+                    Text="{ Binding TxtEmail, Mode=TwoWay}"
+                    Keyboard="Email"               
+                    Placeholder="Enter Your Mail">
                 
                 
-            </Entry>
-            <Label 
-                Text="Password">
-            </Label>
-            <Entry
-                Text="{ Binding TxtPassword, Mode=TwoWay}"
-                IsPassword="True"               
-                Placeholder="Password">
-            </Entry>
-            <ActivityIndicator
-                IsRunning="{ Binding IsRunning, Mode=TwoWay}">
+                </Entry>
+                <Label 
+                    Text="Password">
+                </Label>
+                <Entry
+                    Text="{ Binding TxtPassword, Mode=TwoWay}"
+                    IsPassword="True"               
+                    Placeholder="Password">
+                </Entry>
+                <ActivityIndicator
+                    IsRunning="{ Binding IsRunning, Mode=TwoWay}">
                 
-            </ActivityIndicator>
-            <Button 
-                Command="{Binding btnlogin }"
-                BorderRadius="23"
-                BackgroundColor="Coral"
-                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                TextColor="White"
-                Text="Login">
+                </ActivityIndicator>
+                <Button 
+                    Command="{Binding btnlogin }"
+                    BorderRadius="23"
+                    BackgroundColor="Coral"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    TextColor="White"
+                    Text="Login">
                 
-            </Button>
+                </Button>
 
-            <Label
-                HorizontalOptions="Fill"
-                Text="Recordar Contraseña">
+                <Label
+                    HorizontalOptions="Fill"
+                    Text="Recordar Contraseña">
                 
-            </Label>
-            <Switch
-                IsToggled="{Binding Ddlrecordar, Mode=TwoWay}">
+                </Label>
+                <Switch
+                    IsToggled="{Binding Ddlrecordar, Mode=TwoWay}">
                 
-            </Switch>
-        </StackLayout>
+                </Switch>
+            </StackLayout>
 
         </ScrollView>
     </ContentPage.Content>
