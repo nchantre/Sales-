@@ -135,7 +135,7 @@ namespace Sales.ViewModels
             //mainViewModel.Token = token;
             // MainViewModels.GetInstance().Lands = new LandsViewModels();
             mainViewModel.Lands = new LandsViewModels();
-            await Application.Current.MainPage.Navigation.PushAsync(new RegistroFincasPage());
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
             this.TxtPassword = string.Empty;
             this.TxtEmail = string.Empty;
 

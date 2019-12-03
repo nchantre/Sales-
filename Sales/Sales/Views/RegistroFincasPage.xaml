@@ -17,7 +17,7 @@
                     <Entry x:Name="txtName" Placeholder="Nombre"></Entry>
                     <Entry x:Name="txtTelefono" Placeholder="Telefono"></Entry>
                     <Entry x:Name="txtDirreccion" Placeholder="Direccion"></Entry>
-                    <Entry x:Name="txtCantidadPulpa" Placeholder="Cantidad Pulpa"></Entry>
+                    <Entry x:Name="txtCantidadPulpa" Placeholder="Lote"></Entry>
                     <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                         <Button x:Name="btnAdd" WidthRequest="200" Text="Registro" Clicked="BtnAdd_Clicked" />
                         <Button x:Name="btnRead" WidthRequest="200" Text="Read" Clicked="BtnRead_Clicked" />

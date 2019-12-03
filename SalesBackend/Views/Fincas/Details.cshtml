@@ -1,0 +1,66 @@
+﻿@model SalesCannon.Models.Finca
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Finca</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomFinca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomFinca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoFinca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoFinca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadPultpaFinca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadPultpaFinca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoordenadasFinca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoordenadasFinca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgFinca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgFinca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFinca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFinca }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

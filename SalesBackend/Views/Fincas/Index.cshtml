@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SalesCannon.Models.Finca>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomFinca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoFinca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadPultpaFinca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoordenadasFinca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImgFinca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFinca)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomFinca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonoFinca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadPultpaFinca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CoordenadasFinca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImgFinca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFinca)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdFinca }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdFinca }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdFinca })
+        </td>
+    </tr>
+}
+
+</table>
